@@ -1,0 +1,28 @@
+﻿@model CoreProje.Models.Personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+    <form class="form-group" method="post">
+        <div>
+            <label>Personel Adı</label>
+            <input type="text" class="form-control" name="Ad" required maxlength="50" />
+        </div>
+        <div>
+            <label>Soyadı</label>
+            <input type="text" class="form-control" name="Soyad" required maxlength="50"  />
+        </div>
+        <div>
+            <label>Şehri</label>
+            <input type="text" class="form-control" name="Sehir" required maxlength="50"  />
+        </div>
+        <div>
+            <label>Departman</label>
+            @Html.DropDownListFor(m =>m.Birim.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+
+        <div style="margin-top:15px">
+            <button class="btn btn-info">Personel Ekle</button>
+        </div>
+    </form>

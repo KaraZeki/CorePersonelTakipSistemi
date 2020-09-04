@@ -1,0 +1,24 @@
+﻿@using CoreProje.Models
+@model List<Personel>
+@{
+    ViewData["Title"] = "BirimDetay";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<h2>@ViewBag.brmAd</h2>
+    <table class="table table-bordered">
+        <tr>
+            
+            <td>Personel Adı</td>
+            <td>Personel Soyadı</td>
+            <td>Şehir</td>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <th>@x.Ad</th>
+                <th>@x.Soyad</th>
+                <th>@x.Sehir</th>
+            </tr>
+        }
+    </table>
+

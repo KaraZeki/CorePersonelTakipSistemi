@@ -1,0 +1,29 @@
+﻿@using CoreProje.Models
+@model List<Birim>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <td>ID</td>
+        <td>Departman</td>
+        <td>SIL</td>
+        <td>GÜNCELLE</td>
+        <td>DETAYLAR</td>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <th>@x.BirimID</th>
+            <th>@x.BirimAd</th>
+            <th><a href="/Birim/SIL/@x.BirimID" class="btn btn-danger">SİL</a></th>
+            <th><a href="/Birim/BirimGetir/@x.BirimID" class="btn btn-success">GÜNCELLE</a></th>
+            <th><a href="/Birim/BirimDetay/@x.BirimID" class="btn btn-warning">DETAYLAR</a></th>
+        </tr>
+    }
+</table>
+<a href="/Birim/BirimEkle" class="btn btn-primary">Yeni Departman </a>

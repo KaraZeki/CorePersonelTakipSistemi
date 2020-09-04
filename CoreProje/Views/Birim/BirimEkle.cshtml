@@ -1,0 +1,12 @@
+﻿@model CoreProje.Models.Birim
+@{
+    ViewData["Title"] = "BirimEkle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+    <form class="form-group" method="post">
+        <b>Departman Adı</b>
+        @Html.TextBoxFor(x => x.BirimAd, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-info">Ekle</button>
+    </form>

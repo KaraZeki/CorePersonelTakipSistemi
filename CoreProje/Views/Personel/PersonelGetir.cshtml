@@ -1,0 +1,32 @@
+﻿@model CoreProje.Models.Personel
+@{
+    ViewData["Title"] = "PersonelGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+       <b>Personel İd</b>
+        <br />
+        @Html.TextBoxFor(x => x.PersonelID, new { @class = "form-control" })
+        <br />
+    <div class="form-group">
+        <b>Personel Adı</b>
+        <br />
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+        <br />
+        <b>Soyadı</b>
+        <br />
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+        <br />
+        <b>Şehir</b>
+        <br />
+        @Html.TextBoxFor(x => x.Sehir, new { @class = "form-control" })
+        <br />
+        <b>Çalıştığı Departman</b>
+        <br />
+        @Html.DropDownListFor(m => m.Birim.BirimID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        <br />
+        <button type="submit" class="btn btn-success">Güncelle</button>
+        </div>
+        }
